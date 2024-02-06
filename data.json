@@ -1,0 +1,30 @@
+[
+    {
+      "id": 1,
+      "name": "pepsi",
+      "price": 15,
+      "description": "Yummy",
+      "date added": "2024-02-05"
+    },
+    {
+      "id": 2,
+      "name": "cobra",
+      "price": 20,
+      "description": "cool",
+      "date added": "2024-02-05"
+    },
+    {
+      "id": 3,
+      "name": "water",
+      "price": 22,
+      "description": "refreshing",
+      "date added": "2024-02-05"
+    },
+    {
+      "id": 4,
+      "name": "yakult",
+      "price": 12,
+      "description": "tasty",
+      "date added": "2024-02-05"
+    }
+  ]
