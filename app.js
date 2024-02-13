@@ -1,3 +1,4 @@
+// app.js
 const apiUrl = 'data.json';
 
 async function fetchAndDisplayProducts() {
@@ -12,31 +13,35 @@ async function fetchAndDisplayProducts() {
 
         const productList = document.getElementById('product-list');
 
-        productList.innerHTML = '';
-
         data.forEach(product => {
             const productCard = document.createElement('div');
-            productCard.classList.add('product-card');
+            productCard.classList.add('card');
 
-            const productName = document.createElement('h3');
+            const cardBody = document.createElement('div');
+            cardBody.classList.add('card-body');
+
+            const productName = document.createElement('h5');
+            productName.classList.add('card-title');
             productName.textContent = product.name;
 
+            const productDescription = document.createElement('p');
+            productDescription.classList.add('card-text');
+            productDescription.textContent = product.description;
+
             const productPrice = document.createElement('p');
+            productPrice.classList.add('card-text');
             productPrice.textContent = `Price: $${product.price}`;
 
-            // Access "description" property
-            const productDescription = document.createElement('p');
-            productDescription.textContent = `Description: ${product.description}`;
-
-            // Access "date added" property using square bracket notation
             const productDate = document.createElement('p');
+            productDate.classList.add('card-text');
             productDate.textContent = `Date Added: ${product['date added']}`;
 
-            productCard.appendChild(productName);
-            productCard.appendChild(productPrice);
-            productCard.appendChild(productDescription); // Include product description
-            productCard.appendChild(productDate);
+            cardBody.appendChild(productName);
+            cardBody.appendChild(productDescription);
+            cardBody.appendChild(productPrice);
+            cardBody.appendChild(productDate);
 
+            productCard.appendChild(cardBody);
             productList.appendChild(productCard);
         });
     } catch (error) {
