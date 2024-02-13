@@ -41,12 +41,22 @@ async function fetchAndDisplayProducts() {
             productDate.classList.add('card-text');
             productDate.textContent = `Date Added: ${product['date added']}`;
 
+            const addToCartButton = document.createElement('button');
+            addToCartButton.classList.add('btn', 'btn-primary');
+            addToCartButton.textContent = 'Add to Cart';
+
+            addToCartButton.addEventListener('click', () => {
+                // Add your logic for adding the product to the cart here
+                console.log(`Added ${product.name} to the cart`);
+            });
+
             cardBody.appendChild(productName);
             cardBody.appendChild(productDescription);
             cardBody.appendChild(productPrice);
             cardBody.appendChild(productDate);
+            cardBody.appendChild(addToCartButton); // Add "Add to Cart" button to the card
 
-            productCard.appendChild(cardImg); // Append image to the card
+            productCard.appendChild(cardImg);
             productCard.appendChild(cardBody);
             productList.appendChild(productCard);
         });
