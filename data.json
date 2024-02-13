@@ -1,34 +1,34 @@
 [
   {
       "id": 1,
-      "name": "pepsi",
+      "name": "PEPSI",
       "price": 15,
-      "description": "Yummy",
+      "description": "a carbonated soft drink with a cola flavor, manufactured by PepsiCo.",
       "date added": "2024-02-05",
-      "image": "https://miro.medium.com/v2/resize:fit:736/1*BbNCcVaKW95zk3GGrUiJOQ.jpeg"
+      "image": "https://www.pepsico.com/images/default-source/products-brands/pepsi_12oz.png?sfvrsn=46c9ae09_3"
   },
   {
       "id": 2,
-      "name": "cobra",
+      "name": "COBRA ENERGY DRINK",
       "price": 20,
-      "description": "cool",
+      "description": "Enhanced physical strength and mental alertness.",
       "date added": "2024-02-23",
-      "image": "https://www.philvending.com.ph/wp-content/uploads/2017/04/ITCORB001A-scaled.jpg"
+      "image": "https://media.pickaroo.com/media/thumb/variant_photos/2020/11/19/k2ewSqAmV2VuFEhSwCHuhZ_watermark_400.jpg"
   },
   {
       "id": 3,
-      "name": "water",
+      "name": "WILKINS DISTILLED WATER",
       "price": 22,
-      "description": "refreshing",
+      "description": "The Most Trusted drinking water by moms. Tsusted by doctors.",
       "date added": "2024-01-05",
       "image": "https://banapple.ph/resources/2021/09/beverage-wilkins.jpg"
   },
   {
       "id": 4,
-      "name": "yakult",
+      "name": "YAKULT",
       "price": 12,
-      "description": "tasty",
+      "description": "Fermented dairy product containing small amounts of naturally-occurring Lactose.",
       "date added": "2024-04-05",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0gRcKJ4aFDdqy4EIv_8ZOiOJOd3iQNIRr8g&usqp=CAU"
+      "image": "https://media.pickaroo.com/media/thumb/variant_photos/2023/8/21/edeiS9RMeu4HVcXsHKrSzd_watermark_400.jpg"
   }
 ]
