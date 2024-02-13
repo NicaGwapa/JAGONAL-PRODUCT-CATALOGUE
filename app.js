@@ -1,6 +1,8 @@
 // app.js
 const apiUrl = 'data.json';
 
+let cartItems = [];
+
 async function fetchAndDisplayProducts() {
     try {
         const response = await fetch(apiUrl);
@@ -46,8 +48,8 @@ async function fetchAndDisplayProducts() {
             addToCartButton.textContent = 'Add to Cart';
 
             addToCartButton.addEventListener('click', () => {
-                // Add your logic for adding the product to the cart here
-                console.log(`Added ${product.name} to the cart`);
+                addToCart(product);
+                updateCartTable();
             });
 
             cardBody.appendChild(productName);
@@ -62,6 +64,52 @@ async function fetchAndDisplayProducts() {
         });
     } catch (error) {
         console.error('Error fetching data:', error);
+    }
+}
+
+function addToCart(product) {
+    const existingItem = cartItems.find(item => item.id === product.id);
+
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cartItems.push({ ...product, quantity: 1 });
+    }
+}
+
+function updateCartTable() {
+    const cartTableBody = document.getElementById('cart-items');
+    cartTableBody.innerHTML = '';
+
+    cartItems.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${item.name}</td>
+            <td>$${item.price}</td>
+            <td>
+                <button class="btn btn-secondary" onclick="decrementQuantity(${item.id})">-</button>
+                ${item.quantity}
+                <button class="btn btn-secondary" onclick="incrementQuantity(${item.id})">+</button>
+            </td>
+            <td>$${item.price * item.quantity}</td>
+        `;
+        cartTableBody.appendChild(row);
+    });
+}
+
+function incrementQuantity(productId) {
+    const item = cartItems.find(item => item.id === productId);
+    if (item) {
+        item.quantity += 1;
+        updateCartTable();
+    }
+}
+
+function decrementQuantity(productId) {
+    const item = cartItems.find(item => item.id === productId);
+    if (item && item.quantity > 1) {
+        item.quantity -= 1;
+        updateCartTable();
     }
 }
 
