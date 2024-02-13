@@ -17,6 +17,11 @@ async function fetchAndDisplayProducts() {
             const productCard = document.createElement('div');
             productCard.classList.add('card');
 
+            const cardImg = document.createElement('img');
+            cardImg.classList.add('card-img-top');
+            cardImg.setAttribute('src', product.image);
+            cardImg.setAttribute('alt', product.name);
+
             const cardBody = document.createElement('div');
             cardBody.classList.add('card-body');
 
@@ -41,6 +46,7 @@ async function fetchAndDisplayProducts() {
             cardBody.appendChild(productPrice);
             cardBody.appendChild(productDate);
 
+            productCard.appendChild(cardImg); // Append image to the card
             productCard.appendChild(cardBody);
             productList.appendChild(productCard);
         });
